@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article page</title>
+    <style>
+        body {
+            background: #ffffea;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .title {
+            color: #62ffb0;
+            margin-top: 10px;
+            border: 1px solid aqua;
+            width: 300px;
+            display: inline-block;
+        }
+
+        .content {
+            color: blueviolet;
+            margin-top: 50px;
+            margin-left: 10px;
+            margin-right: 10px;
+            border: 1px solid #62ffb0;
+            min-height: 20vh;
+        }
+
+        .changeArticle{
+            color: #bc6734;
+            text-decoration: none;
+            border: 1px solid aquamarine;
+        }
+    </style>
+</head>
+<body>
+<h1 class="title">{{ article.title }}</h1>
+<h3 class="content">{{ article.content }}</h3>
+<h3 class="changeArticle"><a href="edit/{{ article.id }}">修改文章</a></h3>
+</body>
+</html>

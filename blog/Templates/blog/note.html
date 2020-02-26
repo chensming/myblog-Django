@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note</title>
+    <style>
+        body {
+            background: #ffffea;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #62ffb0;
+        }
+
+        p {
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<h1>数据库相关操作</h1>
+<p>数据迁移：</p>
+<p>python manage.py makemigrations [blog]</p>
+<p>python manage.py migrate</p>
+<p>查看迁移过程sql语句:python manage.py sqlmigrate blog 0001</p>
+<h1>admin相关操作</h1>
+<p>python manage.py createsuperuser</p>
+<h1>Django Shell</h1>
+<p>python manage.py shell</p>
+<p>>>> from blog.models import Article</p>
+<p>>>> Article.objects.all()</p>
+<p>>>> Article.objects.all().values()</p>
+</body>
+</html>

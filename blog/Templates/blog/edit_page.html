@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit page</title>
+    <style>
+        body {
+            background: #ffffea;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .title{
+            min-height: 30px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .contentLabel{
+            color: #91ffdb;
+        }
+
+        .content {
+            margin-top: 10px;
+            border: 0;
+            border-radius: 5px;
+            background-color: rgba(241, 241, 241, .98);
+            height: 100px;
+            padding: 10px;
+            resize: none;
+            min-height: 50vh;
+            width: 900px;
+            font-size: 25px;
+            text-align: left;
+        }
+
+        .button{
+            margin-top: 20px;
+            width: 300px ;
+        }
+    </style>
+</head>
+<body>
+<form action="{% url 'blog:edit_action' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="article_id" value="{{ article.id | default:'0' }}"/>
+    <label>文章标题
+        <input class="title" type="text" name="title" value="{{ article.title }}"/>
+    </label>
+    <br>
+    <p class="contentLabel">文章内容</p>
+    <label>
+{#        <input type="text" name="content" value="{{ article.content }}"/>#}
+        <textarea class="content" name="content">
+            {{ article.content }}
+        </textarea>
+    </label>
+    <br>
+    <input class="button" type="submit" value="提交"/>
+</form>
+</body>
+</html>

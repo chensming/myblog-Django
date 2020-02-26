@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template index</title>
+    <style>
+        body {
+            background: #ffffea;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .title {
+            color: #62ffb0;
+            margin-top: 10px;
+            border: 1px solid aqua;
+            width: 300px;
+            display: inline-block;
+        }
+
+        .content {
+            color: blueviolet;
+            margin-top: 50px;
+            border: 1px solid #62ffb0;
+            min-height: 20vh;
+        }
+
+        .newArticle{
+            color: #bc6734;
+            text-decoration: none;
+            border: 1px solid aquamarine;
+        }
+    </style>
+</head>
+<body>
+<h1><a href="edit/{{ 0 }}" class="newArticle">新文章</a></h1>
+{% for article in articles %}
+    <a class="title" href="article/{{article.id}}">{{ article.title }}</a>
+    <br>
+{% endfor %}
+</body>
+</html>
